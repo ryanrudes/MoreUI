@@ -47,6 +47,10 @@ struct RangeSlider<V>: View where V : BinaryFloatingPoint, V.Stride : BinaryFloa
     */
     
     var body: some View {
+        let upper = bounds.upperBound
+        let lower = bounds.lowerBound
+        let range = upper - lower
+        
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 5)
@@ -55,14 +59,14 @@ struct RangeSlider<V>: View where V : BinaryFloatingPoint, V.Stride : BinaryFloa
                 
                 RoundedRectangle(cornerRadius: 5)
                     .fill(.blue)
-                    .frame(width: geometry.size.width * CGFloat(hi - lo) / 100, height: 4)
-                    .offset(x: geometry.size.width * CGFloat(lo) / 100)
+                    .frame(width: geometry.size.width * CGFloat((hi - lo) / range), height: 4)
+                    .offset(x: geometry.size.width * CGFloat((lo - lower) / range))
                 
                 Circle()
                     .fill(.white)
                     .shadow(radius: 1.5, y: 0.75)
-                    .frame(width: 28, height: 28)
-                    .offset(x: geometry.size.width * CGFloat(lo) / 100 - 14)
+                    .frame(width: 28)
+                    .offset(x: geometry.size.width * CGFloat((lo - lower) / range) - 14)
                     .gesture(
                         DragGesture()
                             .onChanged { gesture in
@@ -77,8 +81,8 @@ struct RangeSlider<V>: View where V : BinaryFloatingPoint, V.Stride : BinaryFloa
                 Circle()
                     .fill(.white)
                     .shadow(radius: 1.5, y: 0.75)
-                    .frame(width: 28, height: 28)
-                    .offset(x: geometry.size.width * CGFloat(hi) / 100 - 14)
+                    .frame(width: 28)
+                    .offset(x: geometry.size.width * CGFloat((hi - lower) / range) - 14)
                     .gesture(
                         DragGesture()
                             .onChanged { gesture in
@@ -92,5 +96,6 @@ struct RangeSlider<V>: View where V : BinaryFloatingPoint, V.Stride : BinaryFloa
             }
         }
         .padding(.horizontal, 1)
+        .frame(maxHeight: 28)
     }
 }
