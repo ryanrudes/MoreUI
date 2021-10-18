@@ -1,6 +1,6 @@
 //
 //  RangeSlider.swift
-//  RangeSlider
+//  swiftui-more
 //
 //  Created by Ryan Rudes on 10/11/21.
 //
