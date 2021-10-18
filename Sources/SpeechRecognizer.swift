@@ -1,6 +1,6 @@
 //
 //  SpeechReader.swift
-//  RangeSlider
+//  swiftui-more
 //
 //  Created by Ryan Rudes on 10/18/21.
 //
