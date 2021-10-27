@@ -1,6 +1,6 @@
 //
 //  PinchView.swift
-//  swiftui-more
+//  MoreUI
 //
 //  Created by Ryan Rudes on 10/18/21.
 //
