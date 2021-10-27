@@ -14,6 +14,7 @@ A W.I.P. extension package for SwiftUI
 - [x] Color extension for UIColors
 - [x] CaseIterable extension for UIColor
 - [ ] CaseIterable extension for Color
-
+- [x] RangeSlider (two-handle interval selection slider)
+- [x] SpeechRecognizer
 
 ...
