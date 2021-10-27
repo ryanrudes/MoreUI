@@ -1,6 +1,6 @@
 //
 //  RangeSlider.swift
-//  swiftui-more
+//  MoreUI
 //
 //  Created by Ryan Rudes on 10/11/21.
 //
