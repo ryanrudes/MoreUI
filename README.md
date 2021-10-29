@@ -18,5 +18,6 @@ A W.I.P. extension package for SwiftUI
 - [x] SpeechRecognizer
 - [x] DocumentPicker
 - [x] FontPicker
+- [x] ReferenceLibraryView
 
 ...
