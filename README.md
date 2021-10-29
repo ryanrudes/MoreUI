@@ -17,5 +17,6 @@ A W.I.P. extension package for SwiftUI
 - [x] RangeSlider (two-handle interval selection slider)
 - [x] SpeechRecognizer
 - [x] DocumentPicker
+- [x] FontPicker
 
 ...
