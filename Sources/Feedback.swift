@@ -4,7 +4,8 @@
 //
 //  Created by Ryan Rudes on 10/30/21.
 //
-
+//  TODO: Add custom haptics with CHHapticPattern
+//
 import SwiftUI
 
 struct HapticGenerator {
