@@ -19,5 +19,6 @@ A W.I.P. extension package for SwiftUI
 - [x] DocumentPicker
 - [x] FontPicker
 - [x] ReferenceLibraryView
+- [x] Feedback
 
 ...
