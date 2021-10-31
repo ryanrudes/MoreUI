@@ -20,5 +20,6 @@ A W.I.P. extension package for SwiftUI
 - [x] FontPicker
 - [x] ReferenceLibraryView
 - [x] Feedback
+- [x] PhotoPicker
 
 ...
