@@ -10,6 +10,7 @@
 //   - hex property
 //   - rgba property
 //   - rgb property
+//   - suColor property
 //   - conformation to CaseIterable
 //   - conformation to Comparable
 //   - other color sets such as .systemColors
@@ -142,6 +143,11 @@ extension UIColor {
             Int(g * multiplier),
             Int(b * multiplier)
         )
+    }
+    
+    /// The SwiftUI color that corresponds to the color obect,
+    var suColor: Color {
+        Color(self)
     }
 }
 
