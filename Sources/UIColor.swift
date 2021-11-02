@@ -151,14 +151,17 @@ extension UIColor {
     }
 }
 
-/// Conformation to `CaseIterable` and `Comparable` protocols.
-extension UIColor: CaseIterable, Comparable {
-    public static func < (lhs: UIColor, rhs: UIColor) -> Bool {
-        return lhs.hue < rhs.hue
-    }
-    
+/// Conformation to `CaseIterable` protocol.
+extension UIColor: CaseIterable {
     public static var allCases: [UIColor] {
         return [.systemCyan, systemMint, .tintColor, .label, .secondaryLabel, .tertiaryLabel, .quaternaryLabel, .systemFill, .secondarySystemFill, .tertiarySystemFill, .quaternarySystemFill, .placeholderText, .systemBackground, .secondarySystemBackground, .tertiarySystemBackground, .systemGroupedBackground, .secondarySystemGroupedBackground,. tertiarySystemGroupedBackground, .separator, .opaqueSeparator, .link, .darkText, .lightText, .systemBlue, systemBrown, .systemGreen, .systemIndigo, .systemOrange, .systemPink, .systemPurple, .systemRed, .systemTeal, .systemYellow, .systemGray, .systemGray2, .systemGray3, .systemGray4, .systemGray5, .systemGray6, .clear, .black, .blue, .brown, .cyan, .darkGray, .gray, .green, .lightGray, .magenta, .orange, .purple, .red, .white, .yellow].sorted(by: { $0.hue < $1.hue })
+    }
+}
+
+/// Conformation to `Comparable` protocol.
+extension UIColor: Comparable {
+    public static func < (lhs: UIColor, rhs: UIColor) -> Bool {
+        return lhs.hue < rhs.hue
     }
 }
 
