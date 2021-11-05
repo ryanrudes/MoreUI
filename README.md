@@ -21,5 +21,6 @@ A W.I.P. extension package for SwiftUI
 - [x] ReferenceLibraryView
 - [x] Feedback
 - [x] PhotoPicker
+- [x] Toast-style alerts
 
 ...
