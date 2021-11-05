@@ -21,6 +21,10 @@ A W.I.P. extension package for SwiftUI
 - [x] ReferenceLibraryView
 - [x] Feedback
 - [x] PhotoPicker
-- [x] Toast-style alerts
+- [x] HUD Toast-style alerts
+- [ ] Better + More Badge modifiers
+- [ ] Wiggle Animation
+- [ ] Int initializers for Color and UIColor
+- [ ] Apple-style Toasts
 
 ...
