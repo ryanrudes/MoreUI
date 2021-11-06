@@ -26,5 +26,6 @@ A W.I.P. extension package for SwiftUI
 - [ ] Wiggle Animation
 - [ ] Int initializers for Color and UIColor
 - [ ] Apple-style Toasts
+- [ ] SFSymbolPicker
 
 ...
