@@ -47,10 +47,17 @@ struct ContentView: View {
         Button("Send Notification") {
             notificationCenter.post(title: "My Notification",
                                     subtitle: "A brief description",
-                                    body: "Some more info.")
+                                    body: "Some more info.",
+                                    trigger: {
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+                return trigger
+            })
+        }
     }
 }
 ```
+
+https://user-images.githubusercontent.com/18452581/140665813-b26292f4-f042-4082-82e6-3c9fbb0ed4dd.mp4
 
 You can customize all properties exposed by `UNNotificationContent`, including the badge, sound, optional attachments, and much more. In addition, you can customize the trigger, as in, how the system delivers the notification.
 
