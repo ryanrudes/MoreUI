@@ -7,7 +7,7 @@ A W.I.P. extension package for SwiftUI
 - [ ] Rounded Rectangle Segmented Picker & Customizable SegmentedPicker
 - [ ] Square Shape
 - [ ] SegmentedControl
-- [ ] PaginatedView
+- [x] PageView
 - [ ] More built-in colors
 - [ ] Conditional properties
 - [ ] Method to change tint color of selected item in segmented picker and tab bar (selectedSegmentTintColor)
