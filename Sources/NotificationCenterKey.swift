@@ -35,8 +35,8 @@ extension UNUserNotificationCenter {
     ///   - targetContentIdentifier: A value your app uses to identify the notification content.
     ///   - interruptionLevel: The interruption level determines the degree of interruption associated with the notification.
     ///   - relevanceScore: The value the system uses to sort your app’s notifications.
-    ///   - options: The authorization options your app is requesting. You may combine the available constants to request authorization for multiple items. Request only the authorization options that you plan to use. For a list of possible values, see ``UNAuthorizationOptions``.
-    ///   - trigger: The condition that causes the system to deliver the notification. Specify `nil` to deliver the notification right away. See ``UNNotificationTrigger`` for documentation on concrete trigger classes.
+    ///   - options: The authorization options your app is requesting. You may combine the available constants to request authorization for multiple items. Request only the authorization options that you plan to use. For a list of possible values, see ``UNAuthorizationOptions``.  Some notification options are handled automatically based on the specification of other parameters, such as `.badge`, `.sound`, `.criticalAlert`, and `.alert`. These do not need to be specified manually by the user.
+    ///   - trigger: A function returning the condition that causes the system to deliver the notification. Specify `nil` to deliver the notification right away. See ``UNNotificationTrigger`` for documentation on concrete trigger classes.
     @available(iOS 15.0, *)
     func post(title: String,
               subtitle: String,
@@ -52,7 +52,7 @@ extension UNUserNotificationCenter {
               interruptionLevel: UNNotificationInterruptionLevel? = nil,
               relevanceScore: Double? = nil,
               options: UNAuthorizationOptions = [],
-              trigger: UNNotificationTrigger? = nil
+              trigger: (() -> UNNotificationTrigger)? = nil
     ) {
         _post(title: title, subtitle: subtitle, body: body, badge: badge, sound: sound, launchImageName: launchImageName, userInfo: userInfo, attachments: attachments, summaryArgument: nil, summaryArgumentCount: nil, categoryIdentifier: categoryIdentifier, threadIdentifier: threadIdentifier, targetContentIdentifier: targetContentIdentifier, interruptionLevel: interruptionLevel, relevanceScore: relevanceScore, options: options, trigger: trigger)
     }
@@ -74,8 +74,8 @@ extension UNUserNotificationCenter {
     ///   - targetContentIdentifier: A value your app uses to identify the notification content.
     ///   - interruptionLevel: The interruption level determines the degree of interruption associated with the notification.
     ///   - relevanceScore: The value the system uses to sort your app’s notifications.
-    ///   - options: The authorization options your app is requesting. You may combine the available constants to request authorization for multiple items. Request only the authorization options that you plan to use. For a list of possible values, see ``UNAuthorizationOptions``.
-    ///   - trigger: The condition that causes the system to deliver the notification. Specify `nil` to deliver the notification right away. See ``UNNotificationTrigger`` for documentation on concrete trigger classes.
+    ///   - options: The authorization options your app is requesting. You may combine the available constants to request authorization for multiple items. Request only the authorization options that you plan to use. For a list of possible values, see ``UNAuthorizationOptions``.  Some notification options are handled automatically based on the specification of other parameters, such as `.badge`, `.sound`, `.criticalAlert`, and `.alert`. These do not need to be specified manually by the user.
+    ///   - trigger: A function returning the condition that causes the system to deliver the notification. Specify `nil` to deliver the notification right away. See ``UNNotificationTrigger`` for documentation on concrete trigger classes.
     @available(iOS, deprecated: 15.0)
     func post(title: String,
               subtitle: String,
@@ -93,7 +93,7 @@ extension UNUserNotificationCenter {
               interruptionLevel: UNNotificationInterruptionLevel? = nil,
               relevanceScore: Double? = nil,
               options: UNAuthorizationOptions = [],
-              trigger: UNNotificationTrigger? = nil
+              trigger: (() -> UNNotificationTrigger)? = nil
     ) {
         _post(title: title, subtitle: subtitle, body: body, badge: badge, sound: sound, launchImageName: launchImageName, userInfo: userInfo, attachments: attachments, summaryArgument: summaryArgument, summaryArgumentCount: summaryArgumentCount, categoryIdentifier: categoryIdentifier, threadIdentifier: threadIdentifier, targetContentIdentifier: targetContentIdentifier, interruptionLevel: interruptionLevel, relevanceScore: relevanceScore, options: options, trigger: trigger)
     }
@@ -114,7 +114,7 @@ extension UNUserNotificationCenter {
                         interruptionLevel: UNNotificationInterruptionLevel? = nil,
                         relevanceScore: Double? = nil,
                         options: UNAuthorizationOptions = [],
-                        trigger: UNNotificationTrigger? = nil) {
+                        trigger: (() -> UNNotificationTrigger)? = nil) {
         var options = options
         
         if badge != nil { options.insert(.badge) }
@@ -170,7 +170,13 @@ extension UNUserNotificationCenter {
             content.relevanceScore = relevanceScore
         }
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        var computedTrigger: UNNotificationTrigger? = nil
+        
+        if let trigger = trigger {
+            computedTrigger = trigger()
+        }
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: computedTrigger)
 
         UNUserNotificationCenter.current().add(request)
     }
