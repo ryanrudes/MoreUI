@@ -80,7 +80,7 @@ All in all, here's a succinct documentation of the notification delivery method,
     - `interruptionLevel`: The interruption level determines the degree of interruption associated with the notification.
     - `relevanceScore`: The value the system uses to sort your app’s notifications.
     - `options`: The authorization options your app is requesting. You may combine the available constants to request authorization for multiple items. Request only the authorization options that you plan to use. For a list of possible values, see ``UNAuthorizationOptions``. Some notification options are handled automatically based on the specification of other parameters, such as `.badge`, `.sound`, `.criticalAlert`, and `.alert`. These do not need to be specified manually by the user.
-    - `trigger`: The condition that causes the system to deliver the notification. Specify `nil` to deliver the notification right away. See ``UNNotificationTrigger`` for documentation on concrete trigger classes.
+    - `trigger`: A function returning the condition that causes the system to deliver the notification. Specify `nil` to deliver the notification right away. See ``UNNotificationTrigger`` for documentation on concrete trigger classes.
 
 # License
 
