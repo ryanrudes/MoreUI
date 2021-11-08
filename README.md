@@ -56,6 +56,7 @@ Documentation will later be available via the [repository wiki](https://github.c
 | `PIPView`                               | View wrapper to present video content in picture-in-picture mode.   | W.I.P.     |
 | `SFSymbolPicker`                        | Picker for the selection of SFSymbols.                              | Completed  |
 | `Toast`                                 | View for presenting Apple-style toast alerts (new in iOS 15).       | W.I.P.     |
+| `SpeechRecognizer`                      | View wrapper for performing actions according to dictated input.    | Completed  |
 
 ### Other Original SwiftUI Features
 | Feature                                 | Description                                                         | Status     |
