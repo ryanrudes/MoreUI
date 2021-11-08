@@ -43,6 +43,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `.pip()`                                | View modifier for presenting content in picture-in-picture mode.    | W.I.P.     |
 | `\.notificationCenter`                  | Environment value for delivering notifications.                     | Completed  |
 | `Feedback` & `HapticGenerator`          | Custom property wrapper for triggering haptic feedback.             | Completed  |
+| `.documentPicker()`                     | Sheet for presenting a document picker.                             | Completed  |
 
 ### Notifications
 
