@@ -63,6 +63,7 @@ Documentation will later be available via the [repository wiki](https://github.c
 | `Animation.wiggle`                      | Wiggle animation, resembles shaking icons when editing home screen. | W.I.P.     |
 | `.toast()`                              | View modifier for presenting alert toasts.                          | W.I.P.     |
 | `.pip()`                                | View modifier for presenting content in picture-in-picture mode.    | W.I.P.     |
+| `\.notificationCenter`                  | Environment value for delivering notifications.                     | Completed  |
 | `Feedback` & `HapticGenerator`          | Custom property wrapper for triggering haptic feedback.             | Completed  |
 
 ### Notifications
