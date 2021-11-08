@@ -83,7 +83,7 @@ public extension View {
      }
      ```
      */
-    func referenceLibrary<Content>(term: Binding<String>, isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil) -> some View {
+    func referenceLibrary(term: Binding<String>, isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil) -> some View {
         self
             .fullScreenCover(isPresented: isPresented, onDismiss: onDismiss) {
                 ReferenceLibrary(term: term.wrappedValue)
