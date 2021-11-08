@@ -35,7 +35,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `Toast`                                 | View for presenting Apple-style toast alerts (new in iOS 15).       | W.I.P.     |
 | `SpeechRecognizer`                      | View wrapper for performing actions according to dictated input.    | Completed  |
 
-### Other Original SwiftUI Features
+### Original SwiftUI Capabilities
 | Feature                                 | Description                                                         | Status     |
 | --------------------------------------- | ------------------------------------------------------------------- | ---------- |
 | `Animation.wiggle`                      | Wiggle animation, resembles shaking icons when editing home screen. | W.I.P.     |
