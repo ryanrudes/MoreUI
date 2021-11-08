@@ -35,6 +35,33 @@ A W.I.P. extension package for SwiftUI
 
 Documentation will later be available via the [repository wiki](https://github.com/ryanrudes/MoreUI/wiki).
 
+### UIKit → SwiftUI 
+
+| UIKit                                   | SwiftUI      | MoreUI                                     |
+| --------------------------------------- | ------------ | ------------------------------------------ |
+| `UIReferenceLibraryViewController`      | -            | `ReferenceLibrary`                         |
+| `PHPickerViewController`                | -            | `PhotoPicker`                              |
+| `UIImagePickerController`               | -            | `ImagePicker`                              |
+| `UISearchBar`                           | -            | `SearchBar`                                |
+| `UIPageViewController`                  | -            | `PageView`                                 |
+| `UIVideoEditorController`               | -            | `VideoEditor`                              |
+
+### Original SwiftUI Views
+| View                                    | Description                                                         | Status     |
+| --------------------------------------- | ------------------------------------------------------------------- | ---------- |
+| `RangeSlider`                           | Two-handle slider for selecting an interval of values.              | Completed  |
+| `PinchView`                             | View wrapper that enables scaling via the pinch gesture.            | Completed  |
+| `PIPView`                               | View wrapper to present video content in picture-in-picture mode.   | W.I.P.     |
+| `SFSymbolPicker`                        | Picker for the selection of SFSymbols.                              | Completed  |
+| `Toast`                                 | View for presenting Apple-style toast alerts (new in iOS 15).       | W.I.P.     |
+
+### Other Original SwiftUI Features
+| Feature                                 | Description                                                         | Status     |
+| --------------------------------------- | ------------------------------------------------------------------- | ---------- |
+| `Animation.wiggle`                      | Wiggle animation, resembles shaking icons when editing home screen. | W.I.P.     |
+| `.toast()`                              | View modifier for presenting alert toasts.                          | W.I.P.     |
+| `.pip()`                                | View modifier for presenting content in picture-in-picture mode.    | W.I.P.     |
+
 ### Notifications
 
 MoreUI features the scheduling of local notifications for delivery by exposing an extended `UNUserNotificationCenter` through a new environment value, `\.notificationCenter`. See the basic implementation below.
