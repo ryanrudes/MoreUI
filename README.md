@@ -3,7 +3,7 @@ MoreUI fills many of the major gaps in SwiftUI, including a vast number of unimp
 
 # Contents
 
-Documentation will later be available via the [repository wiki](https://github.com/ryanrudes/MoreUI/wiki).
+Documentation is currently a work-in-progress, available via the [repository wiki](https://github.com/ryanrudes/MoreUI/wiki).
 
 ### UIKit → SwiftUI 
 
