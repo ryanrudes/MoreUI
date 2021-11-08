@@ -37,16 +37,23 @@ Documentation will later be available via the [repository wiki](https://github.c
 
 ### UIKit → SwiftUI 
 
-| UIKit                                   | SwiftUI      | MoreUI                                     |
-| --------------------------------------- | ------------ | ------------------------------------------ |
-| `UIReferenceLibraryViewController`      | -            | `ReferenceLibrary`                         |
-| `PHPickerViewController`                | -            | `PhotoPicker`                              |
-| `UIImagePickerController`               | -            | `ImagePicker`                              |
-| `UISearchBar`                           | -            | `SearchBar`                                |
-| `UIPageViewController`                  | -            | `PageView`                                 |
-| `UIVideoEditorController`               | -            | `VideoEditor`                              |
-| `UIFontPickerViewController`            | -            | `FontPicker`                               |
-| `UIDocumentPickerViewController`        | -            | `DocumentPicker`                           |
+| UIKit                                   | MoreUI                                     | Status     |
+| --------------------------------------- | ------------------------------------------ | ---------- |
+| `UIReferenceLibraryViewController`      | `ReferenceLibrary`                         | Completed  |
+| `PHPickerViewController`                | `PhotoPicker`                              | Completed  |
+| `UIImagePickerController`               | `ImagePicker`                              | W.I.P.     |
+| `UISearchBar`                           | `SearchBar`                                | Completed  |
+| `UIPageViewController`                  | `PageView`                                 | W.I.P.     |
+| `UIVideoEditorController`               | `VideoEditor`                              | W.I.P.     |
+| `UIFontPickerViewController`            | `FontPicker`                               | Completed  |
+| `UIDocumentBrowserViewController`       | `DocumentBrowser`                          | w.I.P.     |
+| `UIDocumentPickerViewController`        | `DocumentPicker`                           | Completed  |
+| `UIDocumentInteractionController`       | `DocumentInteractor`                       | W.I.P.     |
+| `UICloudSharingController`              | `CloudSharingView`                         | W.I.P.     |
+| `UIActivityViewController`              | `ActivityView`                             | W.I.P.     |
+| `UIPrinterPickerController`             | `PrinterPicker`                            | W.I.P.     |
+| `UISegmentedControl`                    | `SegmentedControl`                         | W.I.P.     |
+| `UIFeedbackGenerator`                   | `Feedback` & `HapticGenerator`             | Completed  |
 
 ### Original SwiftUI Views
 | View                                    | Description                                                         | Status     |
