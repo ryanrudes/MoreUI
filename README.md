@@ -44,6 +44,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `\.notificationCenter`                  | Environment value for delivering notifications.                     | Completed  |
 | `Feedback` & `HapticGenerator`          | Custom property wrapper for triggering haptic feedback.             | Completed  |
 | `.documentPicker()`                     | Sheet for presenting a document picker.                             | Completed  |
+| `.referenceLibrary()`                   | Sheet for presenting a reference library.                           | Completed  |
 
 ### Notifications
 
@@ -91,6 +92,45 @@ All in all, here's a succinct documentation of the notification delivery method,
     - `relevanceScore`: The value the system uses to sort your app’s notifications.
     - `options`: The authorization options your app is requesting. You may combine the available constants to request authorization for multiple items. Request only the authorization options that you plan to use. For a list of possible values, see ``UNAuthorizationOptions``. Some notification options are handled automatically based on the specification of other parameters, such as `.badge`, `.sound`, `.criticalAlert`, and `.alert`. These do not need to be specified manually by the user.
     - `trigger`: A function returning the condition that causes the system to deliver the notification. Specify `nil` to deliver the notification right away. See ``UNNotificationTrigger`` for documentation on concrete trigger classes.
+
+
+### Word Reference Library
+
+MoreUI brings `UIReferenceLibraryViewController` into SwiftUI as `ReferenceLibrary`. It also adds a view modifier `.referenceLibrary` similar to `.sheet` and `.fullScreenCover` for presenting a reference library. Here's an example:
+
+```swift
+struct ContentView: View {
+    @State var term = ""
+    @State var isPresented = false
+    @State var showingAlert = false
+    
+    var body: some View {
+        Form {
+            TextField("Term", text: $term)
+                .textInputAutocapitalization(.never)
+                .onSubmit {
+                    guard !term.isEmpty else { return }
+                    
+                    if dictionaryHasDefinition(forTerm: term) {
+                        isPresented = true
+                    } else {
+                        showingAlert = true
+                    }
+                }
+        }
+        .referenceLibrary(term: $term,
+                          isPresented: $isPresented,
+                          onDismiss: didDismiss)
+        .alert("No definition found for \"\(term)\"", isPresented: $showingAlert) {
+            Button("OK", role: .cancel) { }
+        }
+    }
+    
+    func didDismiss() {
+        // Handle the dismissing action.
+    }
+}
+```
 
 # License
 
