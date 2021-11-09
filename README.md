@@ -134,6 +134,36 @@ struct ContentView: View {
 
 https://user-images.githubusercontent.com/18452581/140837265-b8f18ff8-b09f-45a0-a9a3-2d647c50f5f7.mp4
 
+### Range Slider
+
+MoreUI adds a two-handle slider, but for selecting a closed *interval* of values, rather than just a value in and of itself. The syntax if mostly identical to `Slider`. It accepts either a `ClosedRange` as `interval` or separate lower and upper bounds as `lower` and `upper`, respectively. For instance:
+
+```swift
+struct ContentView: View {
+    @State var interval: ClosedRange<CGFloat> = 25...75
+    
+    var body: some View {
+        RangeSlider(interval: $interval,
+                    in: 0...100,
+                    step: 10) {
+            Label("Label", systemImage: "circle.hexagongrid.fill")
+                .symbolRenderingMode(.multicolor)
+        } minimumValueLabel: {
+            Text("0")
+        } maximumValueLabel: {
+            Text("100")
+        } onEditingChanged: { isEditing in
+            didEditingChange(isEditing)
+        }
+        .padding(.horizontal)
+    }
+    
+    func didEditingChange(_ isEditing: Bool) {
+        // Handle editing change.
+    }
+}
+```
+
 # License
 
 MoreUI is licensed under the [MIT License](https://github.com/ryanrudes/MoreUI/blob/main/LICENSE).
