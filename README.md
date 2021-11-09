@@ -1,5 +1,5 @@
 # MoreUI
-MoreUI fills many of the major gaps in SwiftUI, including a vast number of unimplemented view controllers still not available as SwiftUI Views in the standard library. It alleviates the nuisance of manually interfacing with UIKit, and expands what's possible with pure SwiftUI. It also features a large collection of original views and capabilities that are highly practical for SwiftUI app development.
+MoreUI aims to fill many of the major gaps in SwiftUI, including a vast number of unimplemented view controllers still not available as SwiftUI Views in the standard library. It alleviates the nuisance of manually interfacing with UIKit, and expands what's possible with pure SwiftUI. It also features a large collection of original views and capabilities that are highly practical for SwiftUI app development.
 
 # Contents
 
