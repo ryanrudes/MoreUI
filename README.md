@@ -132,6 +132,8 @@ struct ContentView: View {
 }
 ```
 
+https://user-images.githubusercontent.com/18452581/140837265-b8f18ff8-b09f-45a0-a9a3-2d647c50f5f7.mp4
+
 # License
 
 MoreUI is licensed under the [MIT License](https://github.com/ryanrudes/MoreUI/blob/main/LICENSE).
