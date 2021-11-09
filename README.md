@@ -28,7 +28,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 ### Original SwiftUI Views
 | View                                    | Description                                                         | Status     |
 | --------------------------------------- | ------------------------------------------------------------------- | ---------- |
-| `RangeSlider`                           | Two-handle slider for selecting an interval of values.              | Completed  |
+| `RangeSlider`                           | Two-handle slider for selecting an interval of values.              | W.I.P.     |
 | `PinchView`                             | View wrapper that enables scaling via the pinch gesture.            | Completed  |
 | `PIPView`                               | View wrapper to present video content in picture-in-picture mode.   | W.I.P.     |
 | `SFSymbolPicker`                        | Picker for the selection of SFSymbols.                              | Completed  |
