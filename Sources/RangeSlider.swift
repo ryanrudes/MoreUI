@@ -16,6 +16,7 @@ public struct RangeSlider<V, Label, ValueLabel>: View where V: BinaryFloatingPoi
     let maximumValueLabel: ValueLabel
     let label: Label
     let onEditingChanged: (Bool) -> Void
+    @State private var isEditing = false
     
     public var body: some View {
         let upper = bounds.upperBound
@@ -51,10 +52,14 @@ public struct RangeSlider<V, Label, ValueLabel>: View where V: BinaryFloatingPoi
                                             lo = floor(lo / step) * step
                                         }
                                         interval = ClosedRange(uncheckedBounds: (lo, hi))
-                                        self.onEditingChanged(true)
+                                        if !isEditing {
+                                            self.onEditingChanged(true)
+                                            isEditing = true
+                                        }
                                     }
                                     .onEnded { _ in
                                         self.onEditingChanged(false)
+                                        isEditing = false
                                     }
                             )
                         
@@ -72,10 +77,14 @@ public struct RangeSlider<V, Label, ValueLabel>: View where V: BinaryFloatingPoi
                                             hi = floor(hi / step) * step
                                         }
                                         interval = ClosedRange(uncheckedBounds: (lo, hi))
-                                        self.onEditingChanged(true)
+                                        if !isEditing {
+                                            self.onEditingChanged(true)
+                                            isEditing = true
+                                        }
                                     }
                                     .onEnded { _ in
                                         self.onEditingChanged(false)
+                                        isEditing = false
                                     }
                             )
                     }
@@ -99,8 +108,6 @@ public extension RangeSlider where Label == EmptyView, ValueLabel == EmptyView {
      - Parameter bounds: The range of the valid values. Defaults to `0...1`.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(interval: Binding<ClosedRange<V>>, in bounds: ClosedRange<V> = 0...1, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -121,8 +128,6 @@ public extension RangeSlider where Label == EmptyView, ValueLabel == EmptyView {
      - Parameter step: The distance between each valid value.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(interval: Binding<ClosedRange<V>>, in bounds: ClosedRange<V> = 0...1, step: V.Stride = 1, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -143,8 +148,6 @@ public extension RangeSlider where Label == EmptyView, ValueLabel == EmptyView {
      - Parameter bounds: The range of the valid values. Defaults to `0...1`.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(lower: Binding<V>, upper: Binding<V>, in bounds: ClosedRange<V> = 0...1, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -171,8 +174,6 @@ public extension RangeSlider where Label == EmptyView, ValueLabel == EmptyView {
      - Parameter step: The distance between each valid value.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(lower: Binding<V>, upper: Binding<V>, in bounds: ClosedRange<V> = 0...1, step: V.Stride = 1, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -202,8 +203,6 @@ public extension RangeSlider where Label: View, ValueLabel == EmptyView {
      - Parameter label: A `View` that describes the purpose of the instance. Not all slider styles show the label, but even in those cases, SwiftUI uses the label for accessibility. For example, VoiceOver uses the label to identify the purpose of the slider.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(interval: Binding<ClosedRange<V>>, in bounds: ClosedRange<V> = 0...1, @ViewBuilder label: () -> Label, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -225,8 +224,6 @@ public extension RangeSlider where Label: View, ValueLabel == EmptyView {
      - Parameter label: A `View` that describes the purpose of the instance. Not all slider styles show the label, but even in those cases, SwiftUI uses the label for accessibility. For example, VoiceOver uses the label to identify the purpose of the slider.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(interval: Binding<ClosedRange<V>>, in bounds: ClosedRange<V>, step: V.Stride = 1, @ViewBuilder label: () -> Label, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -248,8 +245,6 @@ public extension RangeSlider where Label: View, ValueLabel == EmptyView {
      - Parameter label: A `View` that describes the purpose of the instance. Not all slider styles show the label, but even in those cases, SwiftUI uses the label for accessibility. For example, VoiceOver uses the label to identify the purpose of the slider.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(lower: Binding<V>, upper: Binding<V>, in bounds: ClosedRange<V> = 0...1, @ViewBuilder label: () -> Label, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -279,8 +274,6 @@ public extension RangeSlider where Label: View, ValueLabel == EmptyView {
      - Parameter label: A `View` that describes the purpose of the instance. Not all slider styles show the label, but even in those cases, SwiftUI uses the label for accessibility. For example, VoiceOver uses the label to identify the purpose of the slider.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(lower: Binding<V>, upper: Binding<V>, in bounds: ClosedRange<V>, step: V.Stride = 1, @ViewBuilder label: () -> Label, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -312,8 +305,6 @@ public extension RangeSlider where Label: View, ValueLabel: View {
      - Parameter maximumValueLabel: A view that describes` bounds.upperBound`.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(interval: Binding<ClosedRange<V>>, in bounds: ClosedRange<V> = 0...1, @ViewBuilder label: () -> Label, @ViewBuilder minimumValueLabel: () -> ValueLabel, @ViewBuilder maximumValueLabel: () -> ValueLabel, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -337,8 +328,6 @@ public extension RangeSlider where Label: View, ValueLabel: View {
      - Parameter maximumValueLabel: A view that describes` bounds.upperBound`.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(interval: Binding<ClosedRange<V>>, in bounds: ClosedRange<V>, step: V.Stride = 1, @ViewBuilder label: () -> Label, @ViewBuilder minimumValueLabel: () -> ValueLabel, @ViewBuilder maximumValueLabel: () -> ValueLabel, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -362,8 +351,6 @@ public extension RangeSlider where Label: View, ValueLabel: View {
      - Parameter maximumValueLabel: A view that describes` bounds.upperBound`.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(lower: Binding<V>, upper: Binding<V>, in bounds: ClosedRange<V> = 0...1, @ViewBuilder label: () -> Label, @ViewBuilder minimumValueLabel: () -> ValueLabel, @ViewBuilder maximumValueLabel: () -> ValueLabel, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
@@ -395,8 +382,6 @@ public extension RangeSlider where Label: View, ValueLabel: View {
      - Parameter maximumValueLabel: A view that describes` bounds.upperBound`.
      - Parameter onEditingChanged: A callback for when editing begins and ends.
      
-     The value of the created instance is equal to the position of the given value within bounds, mapped into `0...1`.
-
      The slider calls `onEditingChanged` when editing begins and ends. For example, on iOS, editing begins when the user starts to drag either thumb along the slider’s track.
      */
     init(lower: Binding<V>, upper: Binding<V>, in bounds: ClosedRange<V>, step: V.Stride = 1, @ViewBuilder label: () -> Label, @ViewBuilder minimumValueLabel: () -> ValueLabel, @ViewBuilder maximumValueLabel: () -> ValueLabel, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
