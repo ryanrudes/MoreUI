@@ -47,6 +47,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `Feedback` & `HapticGenerator`          | Custom property wrapper for triggering haptic feedback.             | Completed  |
 | `.documentPicker()`                     | Sheet for presenting a document picker.                             | Completed  |
 | `.referenceLibrary()`                   | Sheet for presenting a reference library.                           | Completed  |
+| `.pinchToZoom()`                        | View modifier to allow view scaling via a pinch gesture.            | Completed  |
 
 ### Notifications
 
