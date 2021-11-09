@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct RangeSlider<V, Label, ValueLabel>: View where V: BinaryFloatingPoint, V.Stride : BinaryFloatingPoint, Label : View, ValueLabel : View {
+/// A control for selecting an interval of values from a bounded linear range of values.
+public struct RangeSlider<V, Label, ValueLabel>: View where V: BinaryFloatingPoint, V.Stride : BinaryFloatingPoint, Label : View, ValueLabel : View {
     @Binding var lo: V
     @Binding var hi: V
     let bounds: ClosedRange<V>
@@ -16,7 +17,7 @@ struct RangeSlider<V, Label, ValueLabel>: View where V: BinaryFloatingPoint, V.S
     let label: Label
     let onEditingChanged: (Bool) -> Void
     
-    init(lo: Binding<V>, hi: Binding<V>, in bounds: ClosedRange<V> = 0...1, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
+    public init(lo: Binding<V>, hi: Binding<V>, in bounds: ClosedRange<V> = 0...1, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
         self._lo = lo
         self._hi = hi
         self.bounds = bounds
@@ -26,7 +27,7 @@ struct RangeSlider<V, Label, ValueLabel>: View where V: BinaryFloatingPoint, V.S
         self.maximumValueLabel = EmptyView() as! ValueLabel
     }
     
-    init(lo: Binding<V>, hi: Binding<V>, in bounds: ClosedRange<V>, step: V.Stride = 1, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
+    public init(lo: Binding<V>, hi: Binding<V>, in bounds: ClosedRange<V>, step: V.Stride = 1, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
         self._lo = lo
         self._hi = hi
         self.bounds = bounds
@@ -36,7 +37,7 @@ struct RangeSlider<V, Label, ValueLabel>: View where V: BinaryFloatingPoint, V.S
         self.maximumValueLabel = EmptyView() as! ValueLabel
     }
     
-    var body: some View {
+    public var body: some View {
         let upper = bounds.upperBound
         let lower = bounds.lowerBound
         let range = upper - lower
@@ -100,7 +101,7 @@ struct RangeSlider<V, Label, ValueLabel>: View where V: BinaryFloatingPoint, V.S
     }
 }
 
-extension RangeSlider where Label == EmptyView, ValueLabel == EmptyView {
+public extension RangeSlider where Label == EmptyView, ValueLabel == EmptyView {
     init(lo: Binding<V>, hi: Binding<V>, in bounds: ClosedRange<V> = 0...1, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
         self._lo = lo
         self._hi = hi
@@ -112,7 +113,7 @@ extension RangeSlider where Label == EmptyView, ValueLabel == EmptyView {
     }
 }
 
-extension RangeSlider where Label: View, ValueLabel == EmptyView {
+public extension RangeSlider where Label: View, ValueLabel == EmptyView {
     init(lo: Binding<V>, hi: Binding<V>, in bounds: ClosedRange<V> = 0...1, @ViewBuilder label: () -> Label, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
         self._lo = lo
         self._hi = hi
@@ -134,7 +135,7 @@ extension RangeSlider where Label: View, ValueLabel == EmptyView {
     }
 }
 
-extension RangeSlider where Label: View, ValueLabel: View {
+public extension RangeSlider where Label: View, ValueLabel: View {
     init(lo: Binding<V>, hi: Binding<V>, in bounds: ClosedRange<V> = 0...1, @ViewBuilder label: () -> Label, @ViewBuilder minimumValueLabel: () -> ValueLabel, @ViewBuilder maximumValueLabel: () -> ValueLabel, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
         self._lo = lo
         self._hi = hi
