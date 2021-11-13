@@ -51,6 +51,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `.referenceLibrary()`                   | Sheet for presenting a reference library.                           | Completed  |
 | `.pinchToZoom()`                        | View modifier to allow view scaling via a magnification gesture.    | Completed  |
 | `Ringtone`                              | Environment value for playing system and user-downloaded ringtones. | W.I.P.     |
+| `SystemSound`                           | Environment value for playing system sounds.                        | W.I.P.     |
 
 ### Notifications
 
