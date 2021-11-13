@@ -38,6 +38,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `SpeechRecognizer`                      | View wrapper for performing actions according to dictated input.    | Completed  |
 | `TimeIntervalPicker`                    | A wheel picker for selecting a time interval, as seen in Clock app. | W.I.P.     |
 | `ModalLink`                             | A navigation link that presents a view modally.                     | W.I.P.     |
+| `Stopwatch`                             | A stopwatch view as seen in the Clock app native to iOS.            | W.I.P.     |
 
 ### Original SwiftUI Capabilities
 | Feature                                 | Description                                                         | Status     |
@@ -52,6 +53,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `.pinchToZoom()`                        | View modifier to allow view scaling via a magnification gesture.    | Completed  |
 | `Ringtone`                              | Environment value for playing system and user-downloaded ringtones. | W.I.P.     |
 | `SystemSound`                           | Environment value for playing system sounds.                        | W.I.P.     |
+| `.stopwatchStyle()`                     | Either `.digital` or `.graphical`.                                  | W.I.P.     |
 
 ### Notifications
 
