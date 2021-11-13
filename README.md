@@ -36,6 +36,8 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `SFSymbolPicker`                        | Picker for the selection of SFSymbols.                              | Completed  |
 | `Toast`                                 | View for presenting Apple-style toast alerts (new in iOS 15).       | W.I.P.     |
 | `SpeechRecognizer`                      | View wrapper for performing actions according to dictated input.    | Completed  |
+| `TimeIntervalPicker`                    | A wheel picker for selecting a time interval, as seen in Clock app. | W.I.P.     |
+| `ModalLink`                             | A navigation link that presents a view modally.                     | W.I.P.     |
 
 ### Original SwiftUI Capabilities
 | Feature                                 | Description                                                         | Status     |
