@@ -26,6 +26,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `UIPrinterPickerController`             | `PrinterPicker`                            | W.I.P.     |
 | `UISegmentedControl`                    | `SegmentedControl`                         | W.I.P.     |
 | `UIFeedbackGenerator`                   | `Feedback` & `HapticGenerator`             | Completed  |
+| `MFMessageComposeViewController`        | `MessageComposer`                          | W.I.P.     |
 
 ### Original SwiftUI Views
 | View                                    | Description                                                         | Status     |
