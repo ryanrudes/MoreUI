@@ -54,6 +54,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `Ringtone`                              | Environment value for playing system and user-downloaded ringtones. | W.I.P.     |
 | `SystemSound`                           | Environment value for playing system sounds.                        | W.I.P.     |
 | `.stopwatchStyle()`                     | Either `.digital` or `.graphical`.                                  | W.I.P.     |
+| `Font.Family`                           | Font families for safe text view modifiers (no str in init).        | W.I.P.     |
 
 ### Notifications
 
