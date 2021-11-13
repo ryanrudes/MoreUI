@@ -27,6 +27,12 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `UISegmentedControl`                    | `SegmentedControl`                         | W.I.P.     |
 | `UIFeedbackGenerator`                   | `Feedback` & `HapticGenerator`             | Completed  |
 | `MFMessageComposeViewController`        | `MessageComposer`                          | W.I.P.     |
+| `CNContactViewController`               | `ContactView`                              | W.I.P.     |
+| `CNContactPickerViewController`         | `ContactPicker`                            | W.I.P.     |
+| `EKEventViewController`                 | `EventView`                                | W.I.P.     |
+| `EKEventEditViewController`             | `EventEditor`                              | W.I.P.     |
+| `EKCalendarChooser`                     | `CalendarPicker`                           | W.I.P.     |
+| `QLPreviewView`                         | `QuickLook`                                | W.I.P.     |
 
 ### Original SwiftUI Views
 | View                                    | Description                                                         | Status     |
@@ -56,6 +62,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `SystemSound`                           | Environment value for playing system sounds.                        | W.I.P.     |
 | `.stopwatchStyle()`                     | Either `.digital` or `.graphical`.                                  | W.I.P.     |
 | `Font.Family`                           | Font families for safe text view modifiers (no str in init).        | W.I.P.     |
+| `\.bluetooth`                           | Environment value for handling Bluetooth IO.                        | W.I.P.     |
 
 ### Notifications
 
