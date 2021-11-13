@@ -18,7 +18,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `UIPageViewController`                  | `PageView`                                 | W.I.P.     |
 | `UIVideoEditorController`               | `VideoEditor`                              | W.I.P.     |
 | `UIFontPickerViewController`            | `FontPicker`                               | Completed  |
-| `UIDocumentBrowserViewController`       | `DocumentBrowser`                          | w.I.P.     |
+| `UIDocumentBrowserViewController`       | `DocumentBrowser`                          | W.I.P.     |
 | `UIDocumentPickerViewController`        | `DocumentPicker`                           | Completed  |
 | `UIDocumentInteractionController`       | `DocumentInteractor`                       | W.I.P.     |
 | `UICloudSharingController`              | `CloudSharingView`                         | W.I.P.     |
