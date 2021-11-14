@@ -31,7 +31,7 @@ Documentation is currently a work-in-progress, available via the [repository wik
 | `CNContactPickerViewController`         | `ContactPicker`                            | W.I.P.     |
 | `EKEventViewController`                 | `EventView`                                | W.I.P.     |
 | `EKEventEditViewController`             | `EventEditor`                              | W.I.P.     |
-| `EKCalendarChooser`                     | `CalendarPicker`                           | W.I.P.     |
+| `EKCalendarChooser`                     | `CalendarPicker`                           | Completed  |
 | `QLPreviewView`                         | `QuickLook`                                | W.I.P.     |
 
 ### Original SwiftUI Views
